@@ -7,6 +7,21 @@ from aiogram.enums import ParseMode
 from aiogram. filters import CommandStart 
 from aiogram.types import Message
 from async_mistral import main_mistral
+from threading import Thread
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def index()
+    return "bot is alive"
+
+def run():
+    app.run(host='0.0.0.0', port=8000)
+
+def keep_alive():
+    t = Thread(target=run)
+    t.start()
 
 TOKEN = "8180132074:AAFxr6oCd8KTtW87Equyc0V-K6urqSR9sJ4"
 
@@ -34,3 +49,4 @@ async def main() -> None:
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO, stream=sys.stdout)
     asyncio.run(main())
+
