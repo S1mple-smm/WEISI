@@ -1,6 +1,2 @@
-asyncio
-logging
 aiogram
-os
-
 mistralai
